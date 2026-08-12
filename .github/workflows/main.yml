@@ -23,11 +23,11 @@ jobs:
       - name: Download code
         uses: actions/download-artifact@v4
         with:
-          name:code
-          path:
-      - name: Run Linting
+          name: code
+          path: .
+      - name: run Linting
         uses: super-linter/super-linter/slim@v7
         env:
           DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: true
