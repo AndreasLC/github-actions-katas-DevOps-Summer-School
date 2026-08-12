@@ -20,8 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Build]
     steps:
-      - name: Download Code
+      - name: Download code
         uses: actions/download-artifact@v4
+        with:
+          name:code
+          path:
       - name: Run Linting
         uses: super-linter/super-linter/slim@v7
         env:
